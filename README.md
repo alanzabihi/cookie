@@ -40,7 +40,7 @@ const cookieObject = cookie.parseCookie("foo=bar; equation=E%3Dmc%5E2");
 Stringifies a [cookie object](#cookie-object) into an HTTP `Cookie` header.
 
 ```js
-const cookieHeader = cookie.stringify({ a: "foo", b: "bar" });
+const cookieHeader = cookie.stringifyCookie({ a: "foo", b: "bar" });
 // a=foo; b=bar
 ```
 
