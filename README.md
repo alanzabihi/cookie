@@ -22,6 +22,8 @@ const cookie = require("cookie");
 
 ### cookie.parseCookie(str, options)
 
+Alias: `parse()` (deprecated)
+
 Parse an HTTP `Cookie` header string and return an [object](#cookie-object) of all cookie name-value pairs.
 The `str` argument is the string representing a `Cookie` header value and `options` is an
 optional object containing additional parsing options.
@@ -36,6 +38,8 @@ const cookieObject = cookie.parseCookie("foo=bar; equation=E%3Dmc%5E2");
 - `decode` Specifies the function to decode a [cookie-value](https://datatracker.ietf.org/doc/html/rfc6265#section-4.1.1). Defaults to [`decodeURIComponent`](#encode-and-decode).
 
 ### cookie.stringifyCookie(cookieObj, options)
+
+Alias: `stringify()` (deprecated)
 
 Stringifies a [cookie object](#cookie-object) into an HTTP `Cookie` header.
 
