@@ -22,7 +22,7 @@ const cookie = require("cookie");
 
 ### cookie.parseCookie(str, options)
 
-Alias: `parse()` (deprecated)
+Alias: `parse(str, options)` ([deprecated](#deprecated))
 
 Parse an HTTP `Cookie` header string and return an [object](#cookie-object) of all cookie name-value pairs.
 The `str` argument is the string representing a `Cookie` header value and `options` is an
@@ -38,8 +38,6 @@ const cookieObject = cookie.parseCookie("foo=bar; equation=E%3Dmc%5E2");
 - `decode` Specifies the function to decode a [cookie-value](https://datatracker.ietf.org/doc/html/rfc6265#section-4.1.1). Defaults to [`decodeURIComponent`](#encode-and-decode).
 
 ### cookie.stringifyCookie(cookieObj, options)
-
-Alias: `stringify()` (deprecated)
 
 Stringifies a [cookie object](#cookie-object) into an HTTP `Cookie` header.
 
@@ -75,6 +73,8 @@ cookie.parseSetCookie(
 - `decode` Specifies the function to decode a [cookie-value](https://datatracker.ietf.org/doc/html/rfc6265#section-4.1.1). Defaults to [`decodeURIComponent`](#encode-and-decode).
 
 ### cookie.stringifySetCookie(setCookieObj, options)
+
+Alias: `serialize(str, val, options)` ([deprecated](#deprecated))
 
 Stringifies a [`Set-Cookie` object](#set-cookie-object) into a `Set-Cookie` header string.
 
@@ -241,6 +241,14 @@ function onRequest(req, res) {
 
 http.createServer(onRequest).listen(3000);
 ```
+
+## Deprecated
+
+These APIs will be removed in the future:
+
+- `parse` - use new `parseCookie` name
+- `stringify` - use new `stringifySetCookie` name
+- `stringify(str, val, opts)` - use `stringifySetCookie(obj, opts)`
 
 ## Testing
 
